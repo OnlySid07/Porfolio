@@ -1,6 +1,5 @@
 <section
-  class={`flex flex-col  ${Astro.props.class} text-center px-4
-max-w-3xl mx-auto`}
+  class={`flex flex-col text-center md:text-left px-4 max-w-3xl mx-auto ${Astro.props.class || ""}`}
 >
   <slot />
 </section>

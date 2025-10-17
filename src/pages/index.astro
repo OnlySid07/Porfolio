@@ -7,13 +7,17 @@ import LinkedinIcon from "../icons/Linkedin.astro";
 import MailIcon from "../icons/Mail.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import Layout from "../layouts/Layout.astro";
+import Technology from "../components/Technology.astro";
+import Proyects from "../components/Proyects.astro";
+import Footer from "../components/Footer.astro";
+import AboutMe from "../components/AboutMe.astro";
 ---
 
 <Layout
   title="Josu Campaña - Desarrollador Web en Lima, Perú"
   description="Desarrollador web especializado en automatizar procesos y crear experiencias digitales únicas. Experto en frontend y backend."
 >
-  <main class="px-4">
+  <main id="top" class="px-4">
     <SectionContainer class="py-20 md:py-40 pb-16 md:pb-25">
       <img
         class="size-15 md:h-15 md:w-15 rounded-full mb-5 object-cover"
@@ -65,12 +69,57 @@ import Layout from "../layouts/Layout.astro";
         </SocialPill>
       </nav>
     </SectionContainer>
-
-    <SectionContainer class="mb-16">
-      <h2 class="flex text-2xl md:text-3xl font-bold mb-8">
-        Experiencia Laboral
-      </h2>
-      <Experience />
+    <!-- <Tecnologias /> -->
+    <SectionContainer class="mb-20">
+      <h2 class="flex text-2xl md:text-3xl font-bold mb-10">Tecnologias</h2>
+      <div class="flex justify-center gap-x-5 mt-10">
+        <Technology class="size-10 hover:scale-125 transition-all" />
+      </div>
     </SectionContainer>
+
+    <!-- Proyectos -->
+    <SectionContainer id="proyectos" class="mb-16">
+      <h2 class="flex text-2xl md:text-3xl font-bold mb-10">Proyectos</h2>
+      <div class="flex flex-col gap-y-10"></div>
+      <Proyects />
+    </SectionContainer>
+
+    <!-- Sobre mí -->
+    <SectionContainer id="sobre-mi" class="mb-16">
+      <h2 class="flex text-2xl md:text-3xl font-bold mb-10">Sobre mí</h2>
+      <AboutMe />
+    </SectionContainer>
+
+    <!-- Contacto -->
+    <SectionContainer id="contacto" class="mb-16">
+      <h2 class="flex text-2xl md:text-3xl font-bold mb-10">Contacto</h2>
+      <div class="text-center space-y-4">
+        <p class="text-lg text-gray-300">
+          ¿Tienes un proyecto en mente o quieres colaborar?
+        </p>
+        <p class="text-base text-gray-400">
+          Estoy siempre abierto a nuevas oportunidades y conversaciones
+          interesantes.
+        </p>
+        <nav
+          class="flex flex-col md:flex-row gap-3 md:gap-4 mt-6 justify-center"
+        >
+          <SocialPill href="https://github.com/Onlysid07">
+            <GithubIcon class="size-5" />
+            <span>Github</span>
+          </SocialPill>
+          <SocialPill href="https://www.linkedin.com/in/josue-campana/">
+            <LinkedinIcon class="size-5" />
+            <span>Linkedin</span>
+          </SocialPill>
+          <SocialPill href="mailto:josue.campana.mendoza@gmail.com">
+            <MailIcon class="size-5" />
+            <span>josue.campana.mendoza@gmail.com</span>
+          </SocialPill>
+        </nav>
+      </div>
+    </SectionContainer>
+
+    <Footer />
   </main>
 </Layout>

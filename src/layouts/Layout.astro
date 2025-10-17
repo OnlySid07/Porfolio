@@ -1,22 +1,30 @@
 ---
+// filepath: src/layouts/Layout.astro
 import Header from "../components/Header.astro";
 import "../styles/global.css";
-// Supports weights 100-900
 import "@fontsource-variable/onest";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro Basics</title>
+    <meta name="description" content={description} />
+    <title>{title}</title>
   </head>
   <body>
     <div
-      class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
+      class="fixed top-0 left-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
     >
     </div>
     <Header />
@@ -26,15 +34,18 @@ import "@fontsource-variable/onest";
 
 <style is:global>
   :root {
-    color-scheme: dark light;
+    color-scheme: dark;
   }
+
   html {
     font-family: "Onest Variable", sans-serif;
+    scroll-behavior: smooth;
   }
+
   body {
-    background: #000;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
+    background: transparent;
+    min-height: 100vh;
+    color: white;
+    position: relative;
   }
 </style>

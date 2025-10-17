@@ -1,5 +1,11 @@
+---
+// filepath: src/components/SectionContainer.astro
+const { class: className, id } = Astro.props;
+---
+
 <section
-  class={`flex flex-col text-center md:text-left px-4 max-w-3xl mx-auto ${Astro.props.class || ""}`}
+  id={id}
+  class={`flex flex-col text-center md:text-left px-4 max-w-3xl mx-auto scroll-mt-20 ${className || ""}`}
 >
   <slot />
 </section>

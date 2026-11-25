@@ -8,46 +8,100 @@ interface Proyecto {
 
 const PROYECTS: Proyecto[] = [
   {
-    title: "Briggite Dtalles",
+    title: "BCP · Metas Comerciales",
     description:
-      "Pagina de flores con carrito de compras, con supabase y cloudinary",
+      "Plataforma de control de objetivos comerciales: puntos, derivaciones y renta por colaborador, con metas individuales y estadísticas en vivo.",
+    link: "https://bcp-pds.vercel.app/",
+    image: "/proyectos/bcp-pds.png",
+  },
+  {
+    title: "SIVAC · Vacaciones y Controversias",
+    description:
+      "Sistema de gestión de solicitudes de vacaciones y aprobaciones para colaboradores, con paneles diferenciados por rol.",
+    link: "https://vacations-controversia.vercel.app/",
+    image: "/proyectos/vacaciones-controversia.png",
+  },
+  {
+    title: "Briggite D'talles",
+    description:
+      "E-commerce de arreglos florales con catálogo, carrito de compras, Supabase y Cloudinary.",
     link: "https://briggite-dtalles.vercel.app/",
     image: "/Proyect1.webp",
   },
   {
-    title: "Productos Perecibles - Promart ",
+    title: "Impresor de Tickets",
     description:
-      "Sistema de control de productos perecibles para Promart - SKU de prueba 16141",
-    link: "https://perecibles-promart-1z42hk3xj-onlysid07s-projects.vercel.app/",
+      "Editor web para crear dedicatorias y tickets con vista previa en vivo y soporte para impresoras térmicas de 80 mm y 58 mm.",
+    link: "https://tickets-kappa-nine.vercel.app/",
+    image: "/proyectos/impresor-tickets.png",
+  },
+  {
+    title: "BCP Trivia Challenge",
+    description:
+      "Desafío de trivia interactivo para colaboradores de BCP, con modos individual y multijugador.",
+    link: "https://bcp-trivia.vercel.app/",
+    image: "/proyectos/bcp-trivia.png",
+  },
+  {
+    title: "App Financiera",
+    description:
+      "Aplicación PWA para gestionar finanzas personales, con funcionamiento y sincronización offline.",
+    link: "https://app-financiera-ten.vercel.app/",
+    image: "/proyectos/app-financiera.png",
+  },
+  {
+    title: "Productos Perecibles · Promart",
+    description:
+      "Sistema de control de productos perecibles: consulta por SKU, recepciones y escaneo de LPN.",
+    link: "https://perecibles-promart.vercel.app/",
     image: "/Proyect2.webp",
   },
-  // Agrega más proyectos según sea necesario
+  {
+    title: "Jana Tattoo",
+    description:
+      "Sitio web para estudio de tatuajes minimalistas, con galería de trabajos y reserva de citas.",
+    link: "https://jana-tattoo.vercel.app/",
+    image: "/proyectos/jana-tattoo.png",
+  },
+  {
+    title: "Gestor de Tickets",
+    description:
+      "Sistema de gestión de tickets para atención al cliente, con modos de trabajo individual y en línea.",
+    link: "https://ticket-app-beige.vercel.app/",
+    image: "/proyectos/gestor-tickets.png",
+  },
 ];
 ---
 
-<div class="grid gap-8">
+<div class="grid gap-x-6 gap-y-8 md:grid-cols-2">
   {
     PROYECTS.map((proyecto) => (
-      <div class=" bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 hover:scale-102 transition-all  dark:border-gray-700">
+      <div class="flex flex-col bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 hover:scale-102 transition-all dark:border-gray-700">
         <img
-          class="rounded-t-lg"
+          class="rounded-t-lg aspect-[16/10] w-full object-cover object-top"
           src={proyecto.image}
-          alt="Imagenes del proyecto"
+          alt={proyecto.title}
+          loading="lazy"
+          decoding="async"
+          width="1280"
+          height="800"
         />
 
-        <div class="p-5">
-          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+        <div class="flex flex-col grow p-5">
+          <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
             {proyecto.title}
           </h5>
 
-          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+          <p class="mb-4 font-normal text-sm text-gray-700 dark:text-gray-400">
             {proyecto.description}
           </p>
+
           <a
             href={proyecto.link}
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            aria-label={`Ver el proyecto ${proyecto.title}`}
+            class="mt-auto inline-flex w-fit items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
             Ver Proyecto
             <svg
